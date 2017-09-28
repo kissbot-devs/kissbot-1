@@ -11,9 +11,12 @@ const prefix = "$"
 
 bot.on('message', msg => {
   if (msg.author.bot) return;
+  let args = msg.content.split(" ").slice(1).join(" ")
   if (msg.guild.id !== "361722796201607168" && msg.content.startsWith(prefix + "ping" || "subscribe" || "unsubscribe") === true) {
     return msg.channel.send("Sorry, my commands are not available on this server!")
-  } else if (msg.guild.id !== "361722796201607168" && msg.content.startsWith(prefix + `subscribe ${args}` || `unsubscribe ${args}`)) {
+  } else if (msg.guild.id !== "361722796201607168" && msg.content.startsWith(prefix + `subscribe ${args}`)) {
+    return msg.channel.send("You provided arguments but I'm not authorised to operate on this server.")
+  } else if (msg.guild.id !== "361722796201607168" && msg.content.startsWith(prefix + `unsubscribe ${args}`)) {
     return msg.channel.send("You provided arguments but I'm not authorised to operate on this server.")
   }
 
