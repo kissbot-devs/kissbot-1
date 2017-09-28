@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 bot.on('ready', () => {
-  console.log(`Logged in as ${cbot.user.tag}!`);
+  console.log(`Logged in as ${bot.user.tag}!`);
   bot.user.setPresence({ game: { name: `prefix is !!`, type: 0 }});
   bot.user.setStatus('idle')
 });
