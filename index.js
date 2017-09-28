@@ -3,11 +3,11 @@ const bot = new Discord.Client();
 
 bot.on('ready', () => {
   console.log(`Logged in as ${bot.user.tag}!`);
-  bot.user.setPresence({ game: { name: `prefix is !!`, type: 0 }});
+  bot.user.setPresence({ game: { name: `prefix is $`, type: 0 }});
   bot.user.setStatus('idle')
 });
 
-const prefix = "!!"
+const prefix = "$"
 
 bot.on('message', msg => {
   if (msg.author.bot) return;
